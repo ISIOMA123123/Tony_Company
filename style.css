@@ -1,4 +1,19 @@
 /* Reset */
+@media (max-width: 480px) {
+
+    /* Styles for phones */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        margin: 0 5px;
+    }
+}
 * {
     margin: 0;
     padding: 0;
