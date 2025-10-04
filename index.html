@@ -1,135 +1,295 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&P Waste Management</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>A &amp; P ENERGY AND WASTE MANAGEMENT NIGERIA LIMITED</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Meta -->
+    <meta name="description"
+        content="A & P ENERGY AND WASTE MANAGEMENT NIGERIA LIMITED — professional waste management, recycling and compliance services." />
 </head>
 
 <body>
-
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <div class="names_menus">
-                <div>
-                    <h2 class="A_P">
-                        <img src="images/A&P.png" alt="" width="220">
-                    </h2>
-                    <h2 class="waste">
-                        <img src="images/andWaste.png" alt="" width="230">
-                    </h2>
-                    <h3 class="NGL">
-                        <img src="images/NGlimited.png" alt="" width="150">
-                    </h3>
-                    <h3 class="logo">
-                    <img src="images/logo.png" alt="" width="150">
-                    </h3>
+    <!-- Header / Navigation -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">
+                    <img src="images/logoTony22-removebg-preview.png" alt="" width="120">
+                </div>
+                <div class="brand-text">
+                    <span class="company-name">A &amp; P ENERGY AND WASTE MANAGEMENT</span>
+                    <small class="company-sub">NIGERIA LIMITED</small>
                 </div>
             </div>
-            <div class="hamburger" id="hamburger">☰ MENU</div>
-            <nav>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="templates/about.html">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Recycling</a></li>
-                    <li><a href="#">Clients</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Contact</a></li>
+
+            <nav class="nav" id="site-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#sustainability" class="nav-link">Sustainability</a></li>
+                    <li><a href="#contact" class="nav-quote btn-quote">Get a Quote</a></li>
                 </ul>
             </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Slider -->
-    <section class="slider" id="slider">
-        <div class="slide active" style="background-image: url('images/male\ and\ female\ moving\ dirt.png');">
-            <div class="overlay">
-                <h1>Towards ZERO Waste</h1>
-                <p>Leading sustainable waste management solutions.</p>
+    <!-- Hero -->
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="hero-copy">
+                    <h1>Reducing the adverse impact of waste in our workspace and environment</h1>
+                    <p class="lead">collecting, handling and treatment of solid waste 
+                         across Nigeria.</p>
+                    <div class="hero-ctas">
+                        <a href="#services" class="btn primary">Our Services</a>
+                        <a href="#contact" class="btn outline">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-image" aria-hidden="true">
+                    <!-- simple illustrative svg placeholder -->
+                    <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" class="illustration">
+                        <rect width="200" height="160" rx="12" fill="rgba(255,255,255,0.06)" />
+                        <g transform="translate(20,20)" fill="none" stroke="#12A68A" stroke-width="2">
+                            <path d="M0 100 L40 20 L80 100 Z" />
+                            <rect x="90" y="40" width="60" height="60" rx="8" />
+                        </g>
+                    </svg>
+                </div>
             </div>
-        </div>
-        <div class="slide" style="background-image: url();">
-            <div class="overlay">
-                <h1>Recycling for the Future</h1>
-                <p>Transforming waste into valuable resources.</p>
-            </div>
-        </div>
-        <div class="slide" style="background-image: url();">
-            <div class="overlay">
-                <h1>Trusted by Communities</h1>
-                <p>Reliable collection and disposal services.</p>
-            </div>
-        </div>
+        </section>
 
-        <!-- Slider controls -->
-        <div class="slider-controls">
-            <span class="prev" id="prev">&#10094;</span>
-            <span class="next" id="next">&#10095;</span>
-        </div>
-    </section>
+        <!-- Services Overview -->
+        <section id="services" class="section services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p class="muted">A comprehensive suite of waste and recycling solutions for commercial, industrial
+                        and municipal clients.</p>
+                </div>
 
-    <!-- Services Section -->
-    <section class="services container">
-        <h2>OUR SERVICES</h2>
-        <h2>A&P Energy and Waste Management Nigeria Limited deals with the primary
-        4R’s of solid waste management. </h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>reduction</h3>
-                <p>of solid waste</p>
-            </div>
-            <div class="service-card">
-                <h3>reuse</h3>
-                <p>of solid waste</p>
-            </div>
-            <div class="service-card">
-                <h3>recycling</h3>
-                <p>of solid waste</p>
-            </div>
-            <div class="service-card">
-                <h3>recovering</h3>
-                <p>of energy from solid waste</p>
-            </div>
-           
-        </div>
-        <h2 class="serviceRange">
-            Our service ranges in collection,
-            treatment and disposal of solid waste management, to energy recovery in solid
-            waste.
-        </h2>
-    </section>
+                <div class="cards-grid">
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <!-- icon placeholder -->
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="9" stroke="#07223A" stroke-width="2" />
+                                <path d="M8 12h8" stroke="#12A68A" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3>Commercial Recycling</h3>
+                        <p>Customized recycling programs for offices, retail and multi-site operations — reducing waste
+                            and cost.</p>
+                    </article>
 
-    <!-- Vision / Mission -->
-    <section class="vision">
-        <div class="container">
-            <h2>Our Target is ZERO WASTE</h2>
-            <p><strong>Vision:</strong> To be the leading, most innovative waste management company in Nigeria.</p>
-            <p><strong>Mission:</strong> Creating a cleaner, safer environment through cutting-edge professional service
-                delivery.</p>
-        </div>
-    </section>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                                <rect x="4" y="6" width="16" height="12" rx="2" stroke="#07223A" stroke-width="2" />
+                                <path d="M8 6v-2" stroke="#12A68A" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3>Roll-off Containers</h3>
+                        <p>Flexible roll-off services for construction and large-scale cleanups — timely delivery and
+                            pickup.</p>
+                    </article>
 
-    <!-- Clients Section -->
-    <section class="clients container">
-        <h2></h2>
-        <div class="client-logos">
-          
-        </div>
-    </section>
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3v6" stroke="#12A68A" stroke-width="2" stroke-linecap="round" />
+                                <circle cx="12" cy="16" r="4" stroke="#07223A" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3>Industrial Waste Solutions</h3>
+                        <p>Safe handling, transport and treatment of industrial and hazardous waste with certified
+                            processes.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 7h18" stroke="#07223A" stroke-width="2" />
+                                <path d="M3 12h18" stroke="#12A68A" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3>Compliance Reporting</h3>
+                        <p>Accurate documentation and regulatory reporting to keep your operations compliant and
+                            audit-ready.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section id="about" class="section values">
+            <div class="container">
+                <div class="two-col">
+                    <div class="col">
+                        <h2>Why Choose A &amp; P</h2>
+                        <p class="muted">We combine local expertise with modern, sustainable practices to deliver
+                            efficient and compliant waste services.</p>
+
+                        <ul class="value-list">
+                            <li>
+                                <span class="value-icon" aria-hidden="true">✔</span>
+                                <div>
+                                    <h4>Efficiency</h4>
+                                    <p>Streamlined operations and responsive logistics to keep your operations moving.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="value-icon" aria-hidden="true">🌱</span>
+                                <div>
+                                    <h4>Sustainability Commitment</h4>
+                                    <p>Prioritizing recycling, diversion and low-impact waste treatments for long-term
+                                        environmental benefit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="value-icon" aria-hidden="true">📍</span>
+                                <div>
+                                    <h4>Local Expertise</h4>
+                                    <p>Deep knowledge of Nigerian regulations, routes and local partners for reliable
+                                        service.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <div class="stats-card">
+                            <h3>Performance at a glance</h3>
+                            <ul>
+                                <li><strong>10+</strong> years in service</li>
+                                <li><strong>1,200+</strong> tons diverted from landfill annually</li>
+                                <li><strong>100%</strong> compliant reporting for audited clients</li>
+                            </ul>
+                            <a href="#contact" class="btn primary">Request a Consultation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="sustainability" class="section testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What our clients say</h2>
+                    <p class="muted">Trusted by businesses for dependable waste & recycling services.</p>
+                </div>
+
+                <div class="testimonial-wrap">
+                    <button class="tprev" aria-label="Previous testimonial">&larr;</button>
+
+                    <div class="testimonial-carousel" id="testimonial-carousel" role="region"
+                        aria-roledescription="carousel" aria-label="Client testimonials">
+                        <blockquote class="testimonial">
+                            <p>"A &amp; P transformed our recycling program. Reliable pickups and excellent reporting —
+                                great partner."</p>
+                            <cite>— Green Retail Co.</cite>
+                        </blockquote>
+
+                        <blockquote class="testimonial">
+                            <p>"Timely container delivery for our construction sites and very efficient service. Highly
+                                recommended."</p>
+                            <cite>— Akintola Construction</cite>
+                        </blockquote>
+
+                        <blockquote class="testimonial">
+                            <p>"Their compliance team helped us navigate complex waste regulations; audits went
+                                smoothly."</p>
+                            <cite>— Lagos Manufacturing Ltd</cite>
+                        </blockquote>
+                    </div>
+
+                    <button class="tnext" aria-label="Next testimonial">&rarr;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Footer CTA -->
+        <section id="contact" class="section contact-cta">
+            <div class="container cta-inner">
+                <div>
+                    <h2>Ready to make your operations cleaner and compliant?</h2>
+                    <p class="muted">Get a tailored quote or set up a consultation with our team today.</p>
+                </div>
+                <div>
+                    <a href="#" class="btn primary large">Get a Quote</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>this project was built by</p>
-            <p>Ubani Success. All rights reserved.</p>
-            <p>Contact us:<a href=""></a>ubanisuccess</p>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>A &amp; P Energy and Waste Management Nigeria Limited</p>
+                <p>Phone: +234 800 000 0000</p>
+                <p>Email: info@ap-energy-waste.ng</p>
+                <p>Address: Lagos, Nigeria</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#sustainability">Sustainability</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <div class="socials">
+                    <!-- placeholder social icons -->
+                    <a href="#" aria-label="Facebook" class="social">FB</a>
+                    <a href="#" aria-label="Twitter" class="social">TW</a>
+                    <a href="#" aria-label="LinkedIn" class="social">IN</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Subscribe</h4>
+                <p class="muted">Receive updates on services, sustainability reports and news.</p>
+                <form class="subscribe-form" onsubmit="return false;">
+                    <input type="email" placeholder="Email address" aria-label="Email address" required>
+                    <button class="btn small">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <small>© <span id="year"></span> A &amp; P Energy and Waste Management Nigeria Limited. All rights
+                    reserved.</small>
+            </div>
         </div>
     </footer>
 
+    <!-- JS -->
     <script src="script.js"></script>
 </body>
 

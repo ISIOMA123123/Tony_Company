@@ -1,35 +1,93 @@
-// Mobile menu toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+// script.js
+// Minimal interactivity: mobile nav toggle, testimonial carousel, year in footer.
 
-// Slider functionality
-let slides = document.querySelectorAll(".slide");
-let currentIndex = 0;
-const next = document.getElementById("next");
-const prev = document.getElementById("prev");
+document.addEventListener('DOMContentLoaded', function () {
+  // Year in footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    if (i === index) slide.classList.add("active");
+  // Mobile navigation toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const siteHeader = document.getElementById('site-header');
+  navToggle && navToggle.addEventListener('click', function () {
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', (!expanded).toString());
+    document.documentElement.classList.toggle('nav-open');
   });
-}
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-}
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      document.documentElement.classList.remove('nav-open');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  showSlide(currentIndex);
-}
+  // Simple testimonials carousel
+  (function () {
+    const carousel = document.getElementById('testimonial-carousel');
+    if (!carousel) return;
+    const slides = Array.from(carousel.querySelectorAll('.testimonial'));
+    let index = 0;
+    const total = slides.length;
 
-next.addEventListener("click", nextSlide);
-prev.addEventListener("click", prevSlide);
+    // position slides horizontally via transform
+    function update() {
+      slides.forEach((s, i) => {
+        s.style.transform = `translateX(${(i - index) * 100}%)`;
+        s.style.transition = 'transform 450ms ease';
+      });
+    }
+    update();
 
-// Auto-slide every 5s
-setInterval(nextSlide, 5000);
+    // next/prev buttons
+    const btnNext = document.querySelector('.tnext');
+    const btnPrev = document.querySelector('.tprev');
+    btnNext && btnNext.addEventListener('click', () => {
+      index = (index + 1) % total;
+      update();
+      resetAuto();
+    });
+    btnPrev && btnPrev.addEventListener('click', () => {
+      index = (index - 1 + total) % total;
+      update();
+      resetAuto();
+    });
+
+    // Auto-play
+    let auto = setInterval(() => {
+      index = (index + 1) % total;
+      update();
+    }, 6000);
+
+    function resetAuto() {
+      clearInterval(auto);
+      auto = setInterval(() => {
+        index = (index + 1) % total;
+        update();
+      }, 6000);
+    }
+
+    // accessibility: allow left/right arrow navigation when focused
+    carousel.tabIndex = 0;
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { index = (index - 1 + total) % total; update(); resetAuto(); }
+      if (e.key === 'ArrowRight') { index = (index + 1) % total; update(); resetAuto(); }
+    });
+  })();
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const offset = 72; // adjust for fixed header
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+});
