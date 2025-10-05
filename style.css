@@ -326,6 +326,12 @@ body {
     align-items: center
 }
 
+.pcss {
+    display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10.8px;
+}
+
 .value-list {
     list-style: none;
     padding: 0;
