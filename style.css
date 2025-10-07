@@ -439,6 +439,11 @@ body {
     }
 }
 
+/* images inside shape */
+.imgShape {
+    background-color: #8d8dc6;
+}
+
 .pcss {
     display: grid;
         grid-template-columns: repeat(6, 1fr);
