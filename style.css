@@ -327,6 +327,118 @@ body {
     align-items: center
 }
 
+/* CSS - paste into your stylesheet */
+
+/* Container helper (optional) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Hex grid */
+.hex-grid {
+    display: grid;
+    gap: 18px;
+    /* responsive column sizing */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    justify-items: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* Hex tile -- keeps a square box that is clipped to a hexagon */
+.hex {
+    --hex-size: 180px;
+    /* change this to scale tiles */
+    width: var(--hex-size);
+    aspect-ratio: 1 / 1;
+    /* maintain square container */
+    position: relative;
+    overflow: hidden;
+    display: block;
+    /* hexagon shape using clip-path */
+    clip-path: polygon(25% 6.7%,
+            75% 6.7%,
+            100% 50%,
+            75% 93.3%,
+            25% 93.3%,
+            0% 50%);
+    -webkit-clip-path: polygon(25% 6.7%,
+            75% 6.7%,
+            100% 50%,
+            75% 93.3%,
+            25% 93.3%,
+            0% 50%);
+    background: #eee;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: transform .26s ease, box-shadow .26s ease;
+    border-radius: 6px;
+    /* slight rounding inside clipped shape */
+}
+
+/* Image inside tile */
+.hex img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* cover the hex */
+    display: block;
+    transform-origin: center;
+    transition: transform .4s ease;
+    /* for better rendering on some browsers */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Hover / focus effects */
+.hex:hover,
+.hex:focus-within,
+.hex:focus {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+}
+
+.hex:hover img,
+.hex:focus img {
+    transform: scale(1.08) rotate(.5deg);
+}
+
+/* Make hex tiles keyboard-focusable if you wrap <a> around them.
+   Otherwise for accessibility you can add tabindex="0" to .hex elements. */
+.hex:focus {
+    outline: 3px solid rgba(34, 139, 34, 0.18);
+    outline-offset: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .hex {
+        --hex-size: 150px;
+    }
+}
+
+@media (max-width: 560px) {
+    .hex-grid {
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+
+    .hex {
+        --hex-size: 120px;
+    }
+}
+
+/* Optional: center the whole gallery on small screens */
+@media (max-width: 420px) {
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
 .pcss {
     display: grid;
         grid-template-columns: repeat(6, 1fr);
