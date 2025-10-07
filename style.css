@@ -588,3 +588,103 @@ body {
 .nav-open .nav-link {
     padding: 12px 10px
 }
+
+
+
+/* =============================
+   BASIC RESPONSIVE SETUP
+   ============================= */
+
+/* 1. Make sure everything fits nicely on small screens */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Make images and videos resize automatically */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3. Ensure text and layout scale properly */
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Prevent sideways scrolling */
+}
+
+/* 4. Responsive container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =============================
+   MEDIA QUERIES (MOBILE FIRST)
+   ============================= */
+
+/* For tablets and below (screen width 768px or less) */
+@media (max-width: 768px) {
+
+    header,
+    nav,
+    section,
+    footer {
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* For small phones (screen width 480px or less) */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    button,
+    .btn {
+        width: 100%;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
