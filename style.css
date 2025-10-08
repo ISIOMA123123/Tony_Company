@@ -337,6 +337,22 @@ body {
 }
 
 /* Hex grid */
+.hex-grid1 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    /* 2 images side by side */
+    justify-content: center;
+    /* centers the images horizontally */
+    align-items: center;
+    /* centers vertically (if there's height) */
+    gap: 20px;
+    /* space between the two images */        
+}
+
+.grid1Words {
+    text-align: center;
+}
+
 .hex-grid {
     display: grid;
     gap: 18px;
@@ -444,11 +460,11 @@ body {
     background-color: #8d8dc6;
 }
 
-.pcss {
-    display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 10.8px;
+.amazingTeam {
+    text-align: center;
+    padding: 1%;
 }
+
 
 .team {
     text-align: center;
