@@ -17,6 +17,9 @@
     box-sizing: border-box
 }
 
+/* favicon */
+index.html favicon.ico favicon-16x16.png favicon-32x32.png apple-touch-icon.png css/ images/
+
 html,
 body {
     height: 100%
