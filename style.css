@@ -345,7 +345,7 @@ body {
     /* centers the images horizontally */
     align-items: center;
     /* centers vertically (if there's height) */
-    gap: 20px;
+    gap: 70px;
     /* space between the two images */        
 }
 
@@ -374,18 +374,7 @@ body {
     overflow: hidden;
     display: block;
     /* hexagon shape using clip-path */
-    clip-path: polygon(25% 6.7%,
-            75% 6.7%,
-            100% 50%,
-            75% 93.3%,
-            25% 93.3%,
-            0% 50%);
-    -webkit-clip-path: polygon(25% 6.7%,
-            75% 6.7%,
-            100% 50%,
-            75% 93.3%,
-            25% 93.3%,
-            0% 50%);
+    
     background: #eee;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     transition: transform .26s ease, box-shadow .26s ease;
